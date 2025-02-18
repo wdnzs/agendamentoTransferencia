@@ -31,3 +31,25 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### Eclipse IDE ###
+.metadata/
+.classpath
+.project
+.settings/
+
+### Diretórios de compilação ###
+bin/
+target/
+
+### Arquivos do Maven ###
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+
+### Arquivos do sistema operacional ###
+.DS_Store
+Thumbs.db
+
