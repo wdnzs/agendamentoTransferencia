@@ -1,4 +1,4 @@
-package com.banco.agendamentoTransferencia.repo;
+package com.banco.agendamentoTransferencia.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

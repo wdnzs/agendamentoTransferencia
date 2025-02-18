@@ -1,38 +1,31 @@
 package com.banco.agendamentoTransferencia.controller;
 
-import java.time.LocalDate;
+
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.banco.agendamentoTransferencia.model.TaxaCalculadora;
 import com.banco.agendamentoTransferencia.model.Transferencia;
-import com.banco.agendamentoTransferencia.repo.TransferenciaRepository;
+import com.banco.agendamentoTransferencia.service.TransferenciaService;
 
 
 @RestController
 class TransferenciaController {
-    private final TransferenciaRepository repository;
-
-    public TransferenciaController(TransferenciaRepository repository) {
-        this.repository = repository;
-    }
-
-    @PostMapping("/transferencia")
-    public String agendarTransferencia(@RequestBody Transferencia transferencia) {
-        if (!TaxaCalculadora.validarTaxa(transferencia)) {
-            return "Erro: Nenhuma taxa aplicável encontrada para esta transferência.";
-        }
-        transferencia.setDataAgendamento(LocalDate.now());
-        repository.save(transferencia);
-        return "Transferência agendada com sucesso.";
-    }
-
-    @GetMapping("/listaTransferencia")
-    public List<Transferencia> listarTransferencias() {
-        return repository.findAll();
-    }
+	
+	@Autowired
+	private TransferenciaService transferenciaService;
+	
+	@PostMapping("/transferencia")
+	public Transferencia agendarTransferencia(@RequestBody Transferencia transferencia) {
+		return transferenciaService.agendarTransferencia(transferencia);
+	}
+	
+	@GetMapping("/listarTransferencias")
+	public List<Transferencia> listarTransferencias() {
+		return transferenciaService.listarTransferencias();
+	}
 }
