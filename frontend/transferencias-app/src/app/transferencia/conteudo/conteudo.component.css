@@ -1,0 +1,18 @@
+p {
+    background-color: whitesmoke;
+}
+
+.container {
+    mat-form-field{
+        margin-left: 8px;
+    }
+    mat-label {
+        height: 30px;
+    }
+}
+
+.container-button {
+    margin-left: 8px;
+    display: flex;
+    gap: 8px;
+}
