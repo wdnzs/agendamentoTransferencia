@@ -1,7 +1,7 @@
 <div class="container">
   <mat-form-field>
     <mat-label>Conta Origem</mat-label>
-    <input matInput #input (input)="onInput($event)" />
+    <input matInput #input (input)="onInput($event)" [(ngModel)]="contaOrigem"/>
   </mat-form-field>
 
   <mat-form-field>
@@ -32,7 +32,7 @@
 
   <section>
     <div class="container-button">
-      <button mat-flat-button>Agendar</button>
+      <button mat-flat-button (click)="agendarTransferencia()">Agendar</button>
       <button mat-flat-button>Extrato</button>
     </div>
   </section>

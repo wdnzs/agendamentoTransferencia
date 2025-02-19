@@ -39,7 +39,17 @@ export class ConteudoComponent implements OnInit{
   }
 
   public agendarTransferencia(){
-    console.log("AGENDADO!")
+
+    console.log('Conta Origem:', this.contaOrigem);
+    console.log('Conta Destino:', this.contaDestino);
+    console.log('Valor:', this.valor);
+    console.log('Data Agendamento:', this.formatDate(this.dataAgendamento));
+    console.log('Data Transferência:', this.formatDate(this.dataTransferencia));
+  }
+
+  private formatDate(date: Date): string {
+    return date.toISOString().split('T')[0];
+
   }
 
   public extrato() {
