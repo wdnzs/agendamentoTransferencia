@@ -16,6 +16,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatButtonModule} from '@angular/material/button';
 import {MatDatepickerModule} from '@angular/material/datepicker';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -37,6 +38,7 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
     MatDividerModule, 
     MatIconModule,
     MatDatepickerModule,
+    HttpClientModule 
   ],
   providers: [
     provideClientHydration(withEventReplay()),

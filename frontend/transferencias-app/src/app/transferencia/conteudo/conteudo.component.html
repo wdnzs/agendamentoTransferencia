@@ -6,28 +6,28 @@
 
   <mat-form-field>
     <mat-label>Conta Destino</mat-label>
-    <input matInput #input (input)="onInput($event)" />
+    <input matInput #input (input)="onInput($event)" [(ngModel)]="contaDestino" />
   </mat-form-field>
 
   <mat-form-field>
     <mat-label>Valor(R$)</mat-label>
-    <input matInput #input (input)="onInput($event)" />
+    <input matInput #input (input)="onInput($event)" [(ngModel)]="valor" />
   </mat-form-field>
 
   <mat-form-field>
     <mat-label>Data Agendamento</mat-label>
-    <input matInput [matDatepicker]="dataAgendamento">
+    <input matInput [matDatepicker]="dataAgendamentoPicker" [(ngModel)]="dataAgendamento">
     <mat-hint>DD/MM/YYYY</mat-hint>
-    <mat-datepicker-toggle matIconSuffix [for]="dataAgendamento"></mat-datepicker-toggle>
-    <mat-datepicker #dataAgendamento></mat-datepicker>
+    <mat-datepicker-toggle matIconSuffix [for]="dataAgendamentoPicker"></mat-datepicker-toggle>
+    <mat-datepicker #dataAgendamentoPicker></mat-datepicker>
   </mat-form-field>
 
   <mat-form-field>
     <mat-label>Data Transferência</mat-label>
-    <input matInput [matDatepicker]="dataTransferencia">
+    <input matInput [matDatepicker]="dataTransferenciaPicker" [(ngModel)]="dataTransferencia">
     <mat-hint>DD/MM/YYYY</mat-hint>
-    <mat-datepicker-toggle matIconSuffix [for]="dataTransferencia"></mat-datepicker-toggle>
-    <mat-datepicker #dataTransferencia></mat-datepicker>
+    <mat-datepicker-toggle matIconSuffix [for]="dataTransferenciaPicker"></mat-datepicker-toggle>
+    <mat-datepicker #dataTransferenciaPicker></mat-datepicker>
   </mat-form-field>
 
   <section>
